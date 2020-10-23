@@ -1,0 +1,3 @@
+/home/angellafalck/Desktop/EstructuraDatos1/EjercicioArreglo/build/CMakeFiles/edit_cache.dir
+/home/angellafalck/Desktop/EstructuraDatos1/EjercicioArreglo/build/CMakeFiles/rebuild_cache.dir
+/home/angellafalck/Desktop/EstructuraDatos1/EjercicioArreglo/build/CMakeFiles/Array.dir

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/angellafalck/Desktop/EstructuraDatos1/EjercicioArreglo/array.cpp
+array.h
+/home/angellafalck/Desktop/EstructuraDatos1/EjercicioArreglo/array.h
+iostream
+-
+
+/home/angellafalck/Desktop/EstructuraDatos1/EjercicioArreglo/array.h
+initializer_list
+-
+array.cpp
+/home/angellafalck/Desktop/EstructuraDatos1/EjercicioArreglo/array.cpp
+
+/home/angellafalck/Desktop/EstructuraDatos1/EjercicioArreglo/main.cpp
+iostream
+-
+array.h
+/home/angellafalck/Desktop/EstructuraDatos1/EjercicioArreglo/array.h
+
