@@ -48,7 +48,7 @@ Array<TElem>& Array<TElem>::operator=(const Array& rhs)
 
 template<typename TElem>
 //Busqueda Secuencial
-int Array<TElem>::find(TElem element)
+int Array<TElem>::find(TElem element) const
 {
      for(int i=0; i<size_;i++)
     {
@@ -60,7 +60,7 @@ int Array<TElem>::find(TElem element)
 }
 
 template<typename TElem>
-int Array<TElem>::findMinIndex(int pos)
+int Array<TElem>::findMinIndex(int pos) const
 {
     int min=pos;
     for(int i=pos+1; i<size_;i++)
@@ -72,7 +72,7 @@ int Array<TElem>::findMinIndex(int pos)
 }
 
 template<typename TElem>
-int Array<TElem>::findMaxIndex(int pos)
+int Array<TElem>::findMaxIndex(int pos) const
 {
     int max=pos;
     for(int i=pos+1; i<size_;i++)
@@ -116,7 +116,7 @@ void Array<TElem>::insertionSort()
 }
 
 template<typename TElem>
-void Array<TElem>::print()
+void Array<TElem>::print() const
 {
 std::cout <<"[ ";
 bool first=true;
