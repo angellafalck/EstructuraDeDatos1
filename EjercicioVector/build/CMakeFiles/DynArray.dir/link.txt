@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/DynArray.dir/main.cpp.o  -o DynArray 

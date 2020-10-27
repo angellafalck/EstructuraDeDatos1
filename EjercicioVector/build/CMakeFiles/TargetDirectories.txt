@@ -1,3 +1,0 @@
-/home/angellafalck/Desktop/EstructuraDatos1/EjercicioVector/build/CMakeFiles/rebuild_cache.dir
-/home/angellafalck/Desktop/EstructuraDatos1/EjercicioVector/build/CMakeFiles/edit_cache.dir
-/home/angellafalck/Desktop/EstructuraDatos1/EjercicioVector/build/CMakeFiles/DynArray.dir
