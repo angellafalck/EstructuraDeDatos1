@@ -83,7 +83,7 @@ LinkedList::Node* LinkedList::find(int elem)
 LinkedList::Node* LinkedList::findMin()
 {   
     Node* n=head;
-    int menor=tail->data;
+    int menor=head->data;
     while(n!=nullptr)
     {
         if(n->data<menor)
@@ -101,7 +101,7 @@ LinkedList::Node* LinkedList::findMin()
 LinkedList::Node* LinkedList::findMax()
 {   
     Node* n=head;
-    int mayor=tail->data;
+    int mayor=head->data;
     while(n!=nullptr)
     {
         if(n->data>mayor)

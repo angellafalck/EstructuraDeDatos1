@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     
 
     for (int i = 1; i <= 10; i++)
-        l1.pushBack(i * 20);
+        l1.pushBack(i * 50);
     
     l1.print();
     std::cout << '\n';
