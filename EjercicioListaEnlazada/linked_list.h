@@ -19,6 +19,11 @@ public:
     : head(nullptr), tail(nullptr)
     {}
 
+    LinkedList(const std::initializer_list<int>& init);
+    LinkedList(const LinkedList& other);
+
+    ~LinkedList();
+
     void print() const;
     int size() const;
     void pushBack(int data);
@@ -26,6 +31,7 @@ public:
     Node* find(int elem);
     Node* findMin();
     Node* findMax();
+    void reverse();
 
     friend std::ostream& operator << (std::ostream& out, const LinkedList& lst);
 

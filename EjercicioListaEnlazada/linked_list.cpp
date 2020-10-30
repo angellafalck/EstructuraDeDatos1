@@ -1,6 +1,12 @@
 #include <iostream>
 #include "linked_list.h"
 
+std::ostream& operator << (std::ostream& out, const LinkedList& lst)
+{
+    lst.print();
+    return out;
+}
+
 int LinkedList::size() const
 {
     Node *n = head;
@@ -67,51 +73,41 @@ LinkedList::Node* LinkedList::find(int elem)
     {   
            if(n->data==elem)
             {
-              
-                std::cout<<"Element found!"<< '\n';
                 return n;
             }
-           
-            n= n->next;
-      
+           n= n->next;
     }
-    std::cout<<"Element not found!"<< '\n';
-    return n;
+    return nullptr;
 
 }
 
 LinkedList::Node* LinkedList::findMin()
 {   
     Node* n=head;
-    int menor=head->data;
+    Node* menor=head;
     while(n!=nullptr)
     {
-        if(n->data<menor)
+        if(n->data<menor->data)
         {
-            menor=n->data;
+            menor=n;
         }
         n=n->next;
     }
-
-    std::cout<<"Min: "<<menor<< '\n';
-    return n;
-
+    return menor;
 }
 
 LinkedList::Node* LinkedList::findMax()
 {   
     Node* n=head;
-    int mayor=head->data;
+    Node* mayor=head;
     while(n!=nullptr)
     {
-        if(n->data>mayor)
+        if(n->data>mayor->data)
         {
-            mayor=n->data;
+            mayor=n;
         }
         n=n->next;
     }
-
-    std::cout<<"Max: "<<mayor<< '\n';
-    return n;
-
+    return mayor;
 }
+

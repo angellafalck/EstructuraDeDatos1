@@ -19,17 +19,13 @@ int main(int argc, char *argv[])
     for (int i = 1; i <= 10; i++)
         l1.pushBack(i * 50);
     
+    
     l1.print();
     std::cout << '\n';
 
-    std::cout<<"Find Number"<< '\n';
-    l1.find(50);
+    std::cout<<"List size: "<<l1.size()<<'\n';
 
-    l1.findMin();
-    l1.findMax();
-
-    /*
-    for (int i = 10; i >= 1; i--)
+        for (int i = 10; i >= 1; i--)
     {
         l1.pushFront(i * 10);
         
@@ -39,9 +35,24 @@ int main(int argc, char *argv[])
 
     l1.print();
     std::cout << '\n';
-    */
 
+    std::cout<<"List size: "<<l1.size()<<'\n';
+
+    int elem=0;
+    std::cin>>elem;
+    if(l1.find(elem)==nullptr)
+    {
+        std::cout<<"Element not found "<< '\n';
+        std::cout<<"Maximum: "<<l1.findMin()->data<<'\n';
+        std::cout<<"Minimum: "<<l1.findMax()->data<<'\n';
+    }else
+    {
+        std::cout<<"Element found "<< '\n';
+        std::cout<<"Maximum: "<<l1.findMin()->data<<'\n';
+        std::cout<<"Minimum: "<<l1.findMax()->data<<'\n';
+    }
   
+
 
     return 0;
 }
