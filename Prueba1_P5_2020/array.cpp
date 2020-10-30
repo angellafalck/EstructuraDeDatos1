@@ -98,4 +98,5 @@ void Array<TElem>::reverse()
     {
         arr[i]=aux[i];
     }
+
 }
