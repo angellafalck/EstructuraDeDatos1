@@ -25,7 +25,7 @@ public:
     LinkedList(const std::initializer_list<TElem>& init);
     LinkedList(const LinkedList& other);
 
-    //~LinkedList();
+    ~LinkedList();
 
     std::string toString() const;
     int size() const;

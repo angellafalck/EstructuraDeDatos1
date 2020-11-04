@@ -16,7 +16,19 @@ LinkedList<TElem>::LinkedList(const std::initializer_list<TElem>& init)
 template<typename TElem>
 LinkedList<TElem>::LinkedList(const LinkedList& other)
 {
+    Node *n=other.head;
+    while(n!=nullptr)
+    {
+        pushBack(n->data);
+        n=n->next;
+    }
 
+}
+
+template<typename TElem>
+LinkedList<TElem>::~LinkedList()
+{
+ 
 }
 
 template<typename TElem>
