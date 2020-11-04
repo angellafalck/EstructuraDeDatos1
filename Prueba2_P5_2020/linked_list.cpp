@@ -22,7 +22,6 @@ LinkedList<TElem>::LinkedList(const LinkedList& other)
         pushBack(n->data);
         n=n->next;
     }
-
 }
 
 template<typename TElem>
@@ -31,7 +30,7 @@ LinkedList<TElem>::~LinkedList()
     Node* current = head;
     Node* next;
 
-    while (current != NULL) {
+    while (current != nullptr) {
         next = current->next;
         delete current;
         current = next;
@@ -127,6 +126,26 @@ return false;
 template<typename TElem>
 void LinkedList<TElem>::sort()
 {
+  Node* newn = head;
 
+    while(newn!=nullptr)
+    {
+        Node* min=newn;
+        Node* aux=newn->next;
+
+        while(aux!=nullptr)
+        {
+            if(aux->data < min->data)
+            min=aux;
+
+        aux=aux->next;
+        }
+
+        int temp= newn->data;
+        newn->data= min->data;
+        min->data=temp;
+        newn=newn->next;
+        
+    }
 
 }
