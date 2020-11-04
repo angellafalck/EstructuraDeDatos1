@@ -22,7 +22,7 @@ public:
     LinkedList(const std::initializer_list<int>& init);
     LinkedList(const LinkedList& other);
 
-    ~LinkedList();
+    //~LinkedList();
 
     void print() const;
     int size() const;

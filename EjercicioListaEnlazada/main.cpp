@@ -37,6 +37,9 @@ int main(int argc, char *argv[])
     std::cout << '\n';
 
     std::cout<<"List size: "<<l1.size()<<'\n';
+    l1.reverse();
+
+    std::cout<<l1<<'\n';
 
     int elem=0;
     std::cin>>elem;
@@ -51,6 +54,8 @@ int main(int argc, char *argv[])
         std::cout<<"Maximum: "<<l1.findMin()->data<<'\n';
         std::cout<<"Minimum: "<<l1.findMax()->data<<'\n';
     }
+
+    
   
 
 
