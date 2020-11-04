@@ -28,7 +28,15 @@ LinkedList<TElem>::LinkedList(const LinkedList& other)
 template<typename TElem>
 LinkedList<TElem>::~LinkedList()
 {
- 
+    Node* current = head;
+    Node* next;
+
+    while (current != NULL) {
+        next = current->next;
+        delete current;
+        current = next;
+    }
+
 }
 
 template<typename TElem>
@@ -100,12 +108,25 @@ std::string LinkedList<TElem>::toString() const
 template<typename TElem>
 bool LinkedList<TElem>:: isSorted() const
 {
-   
-    return false;
+    Node *n = head;
+    double nod;
+    while(n!=nullptr)
+    {
+        if(nod>n->data)
+        return false;
+
+        nod=n->data;
+        n=n->next;
+    }
+    return true;
+
+return false;
 }
 
+//Selection sort
 template<typename TElem>
 void LinkedList<TElem>::sort()
 {
+
 
 }
