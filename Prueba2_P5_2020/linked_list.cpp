@@ -6,9 +6,9 @@ template<typename TElem>
 LinkedList<TElem>::LinkedList(const std::initializer_list<TElem>& init)
 :head(nullptr),tail(nullptr)
 {
-  for(auto coso: init)
+  for(auto nodo: init)
   {
-      pushBack(coso);
+      pushBack(nodo);
   }
  
 }
@@ -127,6 +127,25 @@ return false;
 template<typename TElem>
 void LinkedList<TElem>::sort()
 {
+        Node* newn = head;
 
+    while(newn!=nullptr)
+    {
+        Node* min=newn;
+        Node* r=newn->next;
+
+        while(r)
+        {
+            if(min->data > r->data)
+            min=r;
+
+        r=r->next;
+        }
+
+        int x= newn->data;
+        newn->data=min->data;
+        min->data=x;
+        newn=newn->next;
+    }
 
 }
