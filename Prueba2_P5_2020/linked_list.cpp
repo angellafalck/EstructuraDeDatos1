@@ -4,13 +4,19 @@
 
 template<typename TElem>
 LinkedList<TElem>::LinkedList(const std::initializer_list<TElem>& init)
+:head(nullptr),tail(nullptr)
 {
-    //data= new TElem(head);
-    int index=0;
-    for(auto elem: init)
-    {
-        head->data=elem;
-    }
+  for(auto coso: init)
+  {
+      pushBack(coso);
+  }
+ 
+}
+
+template<typename TElem>
+LinkedList<TElem>::LinkedList(const LinkedList& other)
+{
+
 }
 
 template<typename TElem>
@@ -78,6 +84,7 @@ std::string LinkedList<TElem>::toString() const
     
     return out.str();
 }
+
 template<typename TElem>
 bool LinkedList<TElem>:: isSorted() const
 {

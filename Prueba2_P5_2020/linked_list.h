@@ -25,7 +25,7 @@ public:
     LinkedList(const std::initializer_list<TElem>& init);
     LinkedList(const LinkedList& other);
 
-    ~LinkedList();
+    //~LinkedList();
 
     std::string toString() const;
     int size() const;
@@ -36,8 +36,7 @@ public:
     bool isSorted() const;
     void sort();
 
-    //friend std::ostream& operator << (std::ostream& out, const LinkedList<T>& lst);
-
+   
 private:
     Node *head;
     Node *tail;
@@ -46,7 +45,7 @@ private:
 template<typename T>
 std::ostream& operator << (std::ostream& out, const LinkedList<T>& data)
 {
-    data.print();
+    data.toString();
     return out;
 }
 

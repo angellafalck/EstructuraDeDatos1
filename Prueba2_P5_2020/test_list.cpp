@@ -36,4 +36,3 @@ TEST_CASE("Sort")
 
     CHECK( lst.toString() == "[6,9,13,15,33,46,46,55,59,79,92]");
 }
-
