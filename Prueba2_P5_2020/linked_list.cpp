@@ -109,13 +109,13 @@ template<typename TElem>
 bool LinkedList<TElem>:: isSorted() const
 {
     Node *n = head;
-    double nod;
-    while(n!=nullptr)
+    Node *nod=head->next;
+    while(nod!=nullptr)
     {
-        if(nod>n->data)
+        if(n->data>nod->data)
         return false;
 
-        nod=n->data;
+        nod=nod->next;
         n=n->next;
     }
     return true;
@@ -127,5 +127,6 @@ return false;
 template<typename TElem>
 void LinkedList<TElem>::sort()
 {
-    
+
+
 }
