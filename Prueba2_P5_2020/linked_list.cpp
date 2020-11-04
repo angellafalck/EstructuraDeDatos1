@@ -100,6 +100,7 @@ std::string LinkedList<TElem>::toString() const
 template<typename TElem>
 bool LinkedList<TElem>:: isSorted() const
 {
+   
     return false;
 }
 

@@ -111,6 +111,7 @@ LinkedList::Node* LinkedList::findMax()
     return mayor;
 }
 
+//Tarea
 void LinkedList::reverse()
 {
     
