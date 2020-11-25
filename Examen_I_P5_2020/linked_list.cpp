@@ -27,10 +27,12 @@ LinkedList<TElem>::LinkedList(const LinkedList& other)
 
 template<typename TElem>
 LinkedList<TElem>:: LinkedList(const std::vector<TElem>& v)
+:head(nullptr),tail(nullptr), size_(0)
+
 {
-    for(auto& jeje: v)
+    for(TElem jeje: v)
     {
-        pushBack(TElem(jeje));
+        pushBack(jeje);
     }
 }
 
