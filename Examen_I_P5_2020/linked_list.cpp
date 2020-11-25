@@ -28,9 +28,9 @@ LinkedList<TElem>::LinkedList(const LinkedList& other)
 template<typename TElem>
 LinkedList<TElem>:: LinkedList(const std::vector<TElem>& v)
 {
-    for(auto jeje: v)
+    for(auto& jeje: v)
     {
-        pushBack(jeje);
+        pushBack(TElem(jeje));
     }
 }
 
@@ -110,7 +110,7 @@ bool LinkedList<TElem>::operator==(const std::vector<TElem>& other) const
 {
     Node *first= head;
     
-    if((first==nullptr || other.empty()) || size() !=other.size())
+    if((first==nullptr || other.empty() )|| size() !=other.size())
     return false; 
 
     for(auto& elem:other)
