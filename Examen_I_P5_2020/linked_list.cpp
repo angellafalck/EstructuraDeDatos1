@@ -141,7 +141,7 @@ void LinkedList<TElem>::insertionSort()
         {
             if(aux->data<nodo->data)
             {
-                int num = aux->data;
+                TElem num = aux->data;
                 aux->data= nodo->data;
                 nodo->data=num;
             }
