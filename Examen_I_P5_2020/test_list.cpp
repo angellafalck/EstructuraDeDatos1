@@ -72,7 +72,7 @@ TEST_CASE("pushFront operation")
     }
     CHECK( lst == makeList({9, 8, 7, 6, 5, 4, 3, 2, 1, 0}) );
 }
-/*
+
 TEST_CASE("Sort")
 {
     LinkedList<int> lst({59, 13, 46, 9, 33, 55, 15, 79, 92, 6, 46});
@@ -81,4 +81,4 @@ TEST_CASE("Sort")
 
     CHECK( lst == makeList({6,9,13,15,33,46,46,55,59,79,92}));
 }
-*/
+

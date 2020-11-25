@@ -33,7 +33,7 @@ public:
     long size() const { return size_; }
     void pushBack(TElem data);
     void pushFront(TElem data);
-    //void insertionSort();
+    void insertionSort();
 
     //Funciones nuevas
     bool operator==(const std::vector<TElem>& other) const;
@@ -42,10 +42,7 @@ private:
     Node *head;
     Node *tail;
     long size_;
-
 };
-
-
 
 #include "linked_list.cpp"
 

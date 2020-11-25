@@ -30,9 +30,9 @@ LinkedList<TElem>:: LinkedList(const std::vector<TElem>& v)
 :head(nullptr),tail(nullptr), size_(0)
 
 {
-    for(TElem jeje: v)
+    for(TElem other: v)
     {
-        pushBack(jeje);
+        pushBack(other);
     }
 }
 
@@ -92,7 +92,7 @@ bool LinkedList<TElem>::operator==(const LinkedList& other) const
     Node* first= head;
     Node* second=other.head;
 
-    if((first==nullptr || second ==nullptr) || size() != other.size())
+    if((first==nullptr || second ==nullptr) || (size() != other.size()))
         return false;
 
     while(first!=nullptr && second!=nullptr)
@@ -112,7 +112,7 @@ bool LinkedList<TElem>::operator==(const std::vector<TElem>& other) const
 {
     Node *first= head;
     
-    if((first==nullptr || other.empty() )|| size() !=other.size())
+    if((first==nullptr || other.empty()) || (size() !=other.size()))
     return false; 
 
     for(auto& elem:other)
@@ -124,4 +124,31 @@ bool LinkedList<TElem>::operator==(const std::vector<TElem>& other) const
     }
   
     return true;
+}
+
+//Insertion Sort
+template<typename TElem>
+void LinkedList<TElem>::insertionSort()
+{
+    Node* newn=head->next;
+
+    while(newn!=nullptr)
+    {
+        Node* aux=newn;
+        Node* nodo= head;
+
+        while(nodo!=newn)
+        {
+            if(aux->data<nodo->data)
+            {
+                int num = aux->data;
+                aux->data= nodo->data;
+                nodo->data=num;
+            }
+            nodo=nodo->next;
+        }
+        newn=newn->next;
+    }
+
+
 }
