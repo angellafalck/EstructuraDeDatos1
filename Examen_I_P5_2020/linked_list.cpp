@@ -26,6 +26,15 @@ LinkedList<TElem>::LinkedList(const LinkedList& other)
 }
 
 template<typename TElem>
+LinkedList<TElem>:: LinkedList(const std::vector<TElem>& v)
+{
+    for(auto jeje: v)
+    {
+        pushBack(jeje);
+    }
+}
+
+template<typename TElem>
 LinkedList<TElem>::~LinkedList()
 {
     Node* current = head;
@@ -39,7 +48,7 @@ LinkedList<TElem>::~LinkedList()
 
 }
 
-//check
+
 template<typename TElem>
 void LinkedList<TElem>::pushBack(TElem data)
 {
@@ -57,7 +66,7 @@ void LinkedList<TElem>::pushBack(TElem data)
      size_++;
 }
 
-//check
+
 template<typename TElem>
 void LinkedList<TElem>::pushFront(TElem data)
 {
@@ -78,6 +87,39 @@ void LinkedList<TElem>::pushFront(TElem data)
 template<typename TElem>
 bool LinkedList<TElem>::operator==(const LinkedList& other) const
 {
- 
+    Node* first= head;
+    Node* second=other.head;
+
+    if((first==nullptr || second ==nullptr) || size() != other.size())
+        return false;
+
+    while(first!=nullptr && second!=nullptr)
+    {
+        if(first->data != second->data)
+            return false;
+
+        first = first->next;
+        second = second->next;
+    }
+  
+    return true;
 }
 
+template<typename TElem>
+bool LinkedList<TElem>::operator==(const std::vector<TElem>& other) const
+{
+    Node *first= head;
+    
+    if((first==nullptr || other.empty()) || size() !=other.size())
+    return false; 
+
+    for(auto& elem:other)
+    {
+        if(first->data != elem)
+            return false;
+
+        first=first->next;
+    }
+  
+    return true;
+}

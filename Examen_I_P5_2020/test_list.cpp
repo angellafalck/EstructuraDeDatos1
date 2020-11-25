@@ -26,7 +26,7 @@ TEST_CASE("List of Strings")
     CHECK( lst.size() == 7 );
     CHECK( lst == makeList<std::string>({"Honduras","Guatemala","El Salvador","Nicaragua","Costa Rica","Panama","Belice"}) );
 }
-/*
+
 TEST_CASE("Conversion from Vector")
 {
     std::vector<long> v{59, 13, 46, 9, 33, 55, 15, 79, 92, 6, 46};
@@ -45,7 +45,7 @@ TEST_CASE("Equal comparison to Vector")
     CHECK( lst.size() == 11 );
     CHECK( lst == v );
 }
-*/
+
 
 TEST_CASE("pushBack operation")
 {

@@ -23,7 +23,7 @@ public:
     {}
 
     LinkedList(const std::initializer_list<TElem>& init);
-    //explicit LinkedList(const std::vector<TElem>& v);
+    explicit LinkedList(const std::vector<TElem>& v);
     LinkedList(const LinkedList& other);
 
     ~LinkedList();
@@ -35,12 +35,14 @@ public:
     void pushFront(TElem data);
     //void insertionSort();
 
+    //Funciones nuevas
+    bool operator==(const std::vector<TElem>& other) const;
+
 private:
     Node *head;
     Node *tail;
     long size_;
 
-    Node *equal;
 };
 
 
