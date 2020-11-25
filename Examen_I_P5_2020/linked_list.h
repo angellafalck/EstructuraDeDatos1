@@ -39,6 +39,8 @@ private:
     Node *head;
     Node *tail;
     long size_;
+
+    Node *equal;
 };
 
 

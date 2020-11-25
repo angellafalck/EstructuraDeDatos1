@@ -9,6 +9,7 @@ LinkedList<TElem>::LinkedList(const std::initializer_list<TElem>& init)
   for(auto nodo: init)
   {
       pushBack(nodo);
+      
   }
  
 }
@@ -49,9 +50,11 @@ void LinkedList<TElem>::pushBack(TElem data)
     }
     else
     {
+
         tail->next = newn;
         tail = newn;
     }
+     size_++;
 }
 
 //check
@@ -68,12 +71,13 @@ void LinkedList<TElem>::pushFront(TElem data)
         newn->next = head;
         head = newn;
     }
+     size_++;
 }
 
 
 template<typename TElem>
 bool LinkedList<TElem>::operator==(const LinkedList& other) const
 {
-    return false;
+ 
 }
 
