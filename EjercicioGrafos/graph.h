@@ -39,6 +39,7 @@ public:
     Graph()
     {}
 
+    void genDotOutput() const;
     void print() const;
     std::vector<Node> nodes;
 };

@@ -13,3 +13,15 @@ void Graph::print() const
         }
     }
 }
+
+void Graph::genDotOutput() const
+{
+    std::cout<<"graph {\n";
+    for(const auto& n:nodes)
+    {
+        for(const auto& t: n.trans)
+        {
+            
+        }
+    }
+}
