@@ -6,16 +6,6 @@
 
 using namespace std; 
 
-//Falta Destructor 
-void printMap();
-char printChar(int num);
-void printFood();
-void initialize();
-void updatesDirection();
-void movement();
-void move(int x, int y);
-void start();
-
 //Variables snake
 int xpos=0;
 int ypos=0;
@@ -27,13 +17,23 @@ int map[size]; //40x40=1600
 int food = 3;
 bool running;
 
+//Falta Destructor 
+void printMap();
+char printChar(int num);
+void printFood();
+void initialize();
+void updatesDirection();
+void movement();
+void move(int x, int y);
+void start();
+
+//Temporales
+//void print(); //Revisar parametros de pantalla
+// void prueba(); //Este solo era para ver si funcionaba el movimiento
 
 void start()
 {
-    //rlutil::cls();
-    int xpos=0;
-    int ypos=0;
-    int direction=0;  
+ 
     food=3;
     initialize();
     running = true;
@@ -59,8 +59,7 @@ void start()
         
     }
 
-    cout << "\n¡G A M E  O V E R!" << endl << "\nYour score is: " << food;
-
+    cout << "\n¡G A M E  O V E R!" << endl << "\nFinal Score: " << food<<endl;
     cin.ignore();
 }
 
@@ -126,7 +125,6 @@ void initialize()
     //Pone la serpiente enmedio
     xpos = 10;
     ypos = 10;
-    map[xpos+ypos*WIDTH]=1;
 
     // Paredes de abajo y arriba
     for (int x = 0; x < WIDTH; ++x) {
@@ -136,7 +134,7 @@ void initialize()
 
     // Paredes de los lados
     for (int y = 0; y < HEIGHT; y++) {
-        map[0 + y * WIDTH] = -1;
+        map[y * WIDTH] = -1;
         map[(WIDTH - 1) + y * WIDTH] = -1;
     }
 
@@ -223,5 +221,57 @@ void move(int x, int y)
 }
 
 
+/*
+//Funciones de prueba
+void prueba()
+{
+    if(kbhit()){
+       
+     switch(rlutil::getkey())
+    {
+        case rlutil::KEY_UP:
+            std::cout<<"up";
+            break;
+        case rlutil::KEY_DOWN:
+            std::cout<<"d";
+            break;
+        case rlutil::KEY_RIGHT:
+            std::cout<<"r";
+            break;
 
+        case rlutil::KEY_LEFT:
+            std::cout<<"l";
+            break;
+
+    }
+    }
+}
+
+void print()
+{
+    rlutil::locate(0,0);
+    std::cout<<"h";
+    rlutil::locate(0,88);
+    std::cout<<"b";
+    rlutil::locate(25,0);
+    std::cout<<"h";
+    rlutil::locate(25,87);
+    std::cout<<"a";
+    rlutil::locate(3,18);
+
+
+}
+
+
+void printSnake()
+{
+    rlutil::locate(x,y);
+    std::cout<<" ";
+    
+    
+    rlutil::msleep(10);
+    rlutil::locate(x,y);
+    rlutil::setChar('*');
+}
+*/
 

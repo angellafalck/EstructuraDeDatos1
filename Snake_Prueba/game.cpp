@@ -22,6 +22,14 @@ int main()
         {
             case 1:
             start();
+            if(!running)
+            {
+                cout<<"Will you like to play again?"<<endl;
+                cout<<"1. YES  2. NO"<<endl;
+                cout<<"Option: "<<endl;
+                cin>>op;
+                
+            }
             break;
 
             case 2:
