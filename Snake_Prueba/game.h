@@ -154,19 +154,15 @@ void movement()
    if(kbhit()){
          switch (getch()) {
     case 'w':
-        if (direction != 2)
         direction = 0;
         break;
     case 'd':
-        if (direction != 3)
         direction = 1;
         break;
     case 's':
-        if (direction != 4)
         direction = 2;
         break;
     case 'a':
-        if (direction != 5)
         direction = 3;
         break;
     }
