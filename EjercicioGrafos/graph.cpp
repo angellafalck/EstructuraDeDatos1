@@ -21,7 +21,11 @@ void Graph::genDotOutput() const
     {
         for(const auto& t: n.trans)
         {
-            
+            std::cout<<"    "
+                <<n.label<< " -- "<<t.node->label
+                <<"[ label=\"" <<t.weight<<"\""
+                <<", weight=\""<<t.weight<<"\" ];\n";
         }
     }
+    std::cout<<"}\n";
 }

@@ -42,6 +42,6 @@ int main()
     g.nodes.push_back(nd);
     g.nodes.push_back(ne);
 
-    g.print();
+    g.genDotOutput();
 
 }
