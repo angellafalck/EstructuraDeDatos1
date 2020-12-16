@@ -22,11 +22,13 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    std::vector<unsigned> numbers_ss(1000000);
-    std::vector<unsigned> numbers_bs(1000000);
-    std::vector<unsigned> numbers_is(1000000);
-    std::vector<unsigned> numbers_qs(1000000);
-    std::vector<unsigned> numbers_cs(1000000);
+    std::vector<unsigned> numbers_ss(10000);
+    std::vector<unsigned> numbers_bs(10000);
+    std::vector<unsigned> numbers_is(10000);
+    std::vector<unsigned> numbers_qs(10000);
+    std::vector<unsigned> numbers_cs(10000);
+    std::vector<unsigned> numbers_hs(10000);
+    std::vector<unsigned> numbers_ms(10000);
 
     sys_time start_time = sys_clock::now();
     in.read(reinterpret_cast<char *>(numbers_ss.data()), numbers_ss.size() * sizeof(char));
@@ -35,6 +37,8 @@ int main(int argc, char *argv[])
     numbers_is = numbers_ss;
     numbers_qs = numbers_ss;
     numbers_cs = numbers_ss;
+    numbers_hs = numbers_ss;
+    numbers_ms = numbers_ss;
 
     std::chrono::microseconds duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
     std::cout << "Load time: " << static_cast<double>(duration.count()) << "us\n";
@@ -45,7 +49,8 @@ int main(int argc, char *argv[])
     testSort("Selection Sort", numbers_ss, selectionSort);
     testSort("Bubble Sort", numbers_bs, bubbleSort);
     testSort("Insertion Sort", numbers_is, insertionSort);
-    testSort("Quick Sort", numbers_qs, quickSort);
-
+    //testSort("Quick Sort", numbers_qs, quickSort);
+    testSort("Heap Sort", numbers_hs, heapSort);
+    //testSort("Merge Sort", numbers_ms, mergeSort);
     return 0;
 }
