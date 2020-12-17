@@ -24,10 +24,12 @@ int main()
             start();
             if(!running)
             {
+                rlutil::setColor(rlutil::LIGHTBLUE);
                 cout<<"Will you like to play again?"<<endl;
                 cout<<"1. YES  2. NO"<<endl;
                 cout<<"Option: "<<endl;
                 cin>>op;
+                
                 
             }
             break;
@@ -48,6 +50,7 @@ int main()
         }
 
     }while(op!=2);
+    rlutil::cls();
     return 0;
 }
 

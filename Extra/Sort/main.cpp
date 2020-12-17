@@ -49,8 +49,9 @@ int main(int argc, char *argv[])
     testSort("Selection Sort", numbers_ss, selectionSort);
     testSort("Bubble Sort", numbers_bs, bubbleSort);
     testSort("Insertion Sort", numbers_is, insertionSort);
-    //testSort("Quick Sort", numbers_qs, quickSort);
+    testSort("Quick Sort", numbers_qs, quickSort);
     testSort("Heap Sort", numbers_hs, heapSort);
-    //testSort("Merge Sort", numbers_ms, mergeSort);
+    testSort("Merge Sort", numbers_ms, mergeSort);
+
     return 0;
 }

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "rlutil.h"
+#include <stdlib.h>
 
 #define WIDTH 30
 #define HEIGHT 30
@@ -23,9 +24,9 @@ char printChar(int num);
 void printFood();
 void initialize();
 void updatesDirection();
-void movement();
 void move(int x, int y);
 void start();
+void clean();
 
 //Temporales
 //void print(); //Revisar parametros de pantalla
@@ -33,14 +34,11 @@ void start();
 
 void start()
 {
- 
     food=3;
+    clean();
     initialize();
     running = true;
     while (running) {
-        if (kbhit()) 
-            movement();
-        
         updatesDirection();
         rlutil::cls();
         printMap();
@@ -58,10 +56,17 @@ void start()
        
         
     }
-
+    rlutil::setColor(rlutil::LIGHTBLUE);
     cout << "\n¡G A M E  O V E R!" << endl << "\nFinal Score: " << food<<endl;
     cin.ignore();
+
 }
+
+void clean()
+{
+    std::fill_n(map, size,0);
+}
+
 
 void printMap()
 {
@@ -78,7 +83,7 @@ void printMap()
         }
         cout << endl;
     }
-    rlutil::setColor(rlutil::LIGHTBLUE);
+    rlutil::setColor(rlutil::BLACK);
     cout <<"+-----------------------------+"<< endl;
     
 }
@@ -142,8 +147,10 @@ void initialize()
     
 }
 
-void movement() 
-{
+
+
+void updatesDirection() {
+
     /*
     w= up
     s= down
@@ -167,27 +174,27 @@ void movement()
         break;
     }
 }
-  
-}
 
-void updatesDirection() {
-
-switch (direction) {
-    case 0: 
+    if(direction==0)
+    {
+        gotoxy(-1,0);
         move(-1, 0);
-    break;
-
-    case 1: 
+        
+    }else if(direction==1)
+    {
+        gotoxy(0,1);
         move(0, 1);
-    break;
-
-    case 2: 
+        
+    }else if(direction==2)
+    {
+        gotoxy(1,0);
         move(1, 0);
-    break;
-
-    case 3: 
+        
+    }else if(direction==3)
+    {
+        gotoxy(0,-1);
         move(0, -1);
-    break;
+        
     }
 
     for (int i = 0; i < size; i++) {
@@ -217,6 +224,7 @@ void move(int x, int y)
 }
 
 
+
 /*
 //Funciones de prueba
 void prueba()
@@ -227,18 +235,20 @@ void prueba()
     {
         case rlutil::KEY_UP:
             std::cout<<"up";
+            direction=0;
             break;
         case rlutil::KEY_DOWN:
             std::cout<<"d";
+            direction=1;
             break;
         case rlutil::KEY_RIGHT:
             std::cout<<"r";
+            direction=2;
             break;
-
         case rlutil::KEY_LEFT:
             std::cout<<"l";
+            direction=3;
             break;
-
     }
     }
 }
@@ -254,11 +264,7 @@ void print()
     rlutil::locate(25,87);
     std::cout<<"a";
     rlutil::locate(3,18);
-
-
 }
-
-
 void printSnake()
 {
     rlutil::locate(x,y);
@@ -270,4 +276,3 @@ void printSnake()
     rlutil::setChar('*');
 }
 */
-
