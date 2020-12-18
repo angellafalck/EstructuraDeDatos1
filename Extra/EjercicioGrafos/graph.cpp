@@ -29,3 +29,4 @@ void Graph::genDotOutput() const
     }
     std::cout<<"}\n";
 }
+
