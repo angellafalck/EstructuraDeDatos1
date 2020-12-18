@@ -18,7 +18,6 @@ int map[size]; //40x40=1600
 int food = 3;
 bool running;
 
-//Falta Destructor 
 void printMap();
 char printChar(int num);
 void printFood();
